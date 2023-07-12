@@ -128,7 +128,7 @@ class TestAccountService(TestCase):
     def test_read_an_account(self):
         account=self._create_accounts(1)[0]
         resp=self.client.get(
-            f"{BASE_URL}/{account_id}", content_type="application/json"
+            f"{BASE_URL}/{account["account_id"]}", content_type="application/json"
         )
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data=resp.get_json()
